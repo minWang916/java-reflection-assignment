@@ -1,10 +1,14 @@
 package com.kms;
 
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class App 
 {
+
+    
+
     private static final Logger logger = LoggerFactory.getLogger(App.class);
     public static void main( String[] args )
     {
@@ -34,7 +38,7 @@ public class App
 
 
         //Use Lombok-generated constructor
-        UserRow user2 = new UserRow(3,"quangdo@kms.technology.com","Quang","Do");
+        UserRow user2 = new UserRow(2,"quangdo@kms.technology.com","Quang","Do");
         
         
         // Use Lombok-generated getters and toString
@@ -43,5 +47,15 @@ public class App
         System.out.println("First Name: " + user2.getFirstName());
         System.out.println("Last Name: " + user2.getLastName());
         System.out.println(user2);
+
+
+        //Read CSV data to Java objects
+        CsvReader csvReader = new CsvReader();
+        try {
+            List<UserRow> users = csvReader.readCsv("data.csv");
+            users.forEach(System.out::println);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
