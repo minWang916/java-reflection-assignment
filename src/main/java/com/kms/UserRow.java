@@ -1,28 +1,26 @@
 package com.kms;
 
+import com.annotations.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.annotations.*;
-
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRow{
+public class UserRow {
 
-    @Column("ID")
-    @NotNull
-    private int ID;
+  @Column("ID")
+  @NotNull
+  private int ID;
 
-    @Column("Email")
-    @NotNull
-    private String email;
+  @Column("Email")
+  @NotNull
+  private String email;
 
-    @Column("First Name")
-    private String firstName;
+  @Column("First Name")
+  private String firstName;
 
-    @Column("Last Name")
-    private String lastName;
+  @Column("Last Name")
+  private String lastName;
 }
-
