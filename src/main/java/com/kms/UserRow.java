@@ -19,10 +19,10 @@ public class UserRow{
     @NotNull
     private String email;
 
-    @Column("FirstName")
+    @Column("First Name")
     private String firstName;
 
-    @Column("LastName")
+    @Column("Last Name")
     private String lastName;
 }
 
