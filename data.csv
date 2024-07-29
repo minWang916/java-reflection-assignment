@@ -1,3 +1,5 @@
-ID,Email,FirstName,LastName
+ID,Email,First Name,Last Name
 3,john.doe@example.com,John,Doe
-4,jane.doe@example.com,Jane,Doe
+4,jane.doe@example.com,Jane,NULL
+5,alice@example.com,Alice,
+6,bob@example.com,Bob,NULL

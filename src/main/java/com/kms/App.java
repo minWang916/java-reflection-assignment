@@ -3,12 +3,13 @@ package com.kms;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.kms.CsvReader;
+import com.kms.CsvReader;
+import com.kms.UserRow;
+
 
 public class App 
 {
-
-    
-
     private static final Logger logger = LoggerFactory.getLogger(App.class);
     public static void main( String[] args )
     {
@@ -20,20 +21,20 @@ public class App
 
 
         // Create an instance of UserRow
-        UserRow user = new UserRow();
+        UserRow user1 = new UserRow();
         
         // Use Lombok-generated setters
-        user.setID(1);
-        user.setEmail("quangdm961@gmail.com");
-        user.setFirstName("Minh");
-        user.setLastName("Quang");
+        user1.setID(1);
+        user1.setEmail("quangdm961@gmail.com");
+        user1.setFirstName("Minh");
+        user1.setLastName("Quang");
         
         // Use Lombok-generated getters and toString
-        System.out.println("ID: " + user.getID());
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("First Name: " + user.getFirstName());
-        System.out.println("Last Name: " + user.getLastName());
-        System.out.println(user);
+        System.out.println("ID: " + user1.getID());
+        System.out.println("Email: " + user1.getEmail());
+        System.out.println("First Name: " + user1.getFirstName());
+        System.out.println("Last Name: " + user1.getLastName());
+        System.out.println(user1);
 
 
 
@@ -49,11 +50,14 @@ public class App
         System.out.println(user2);
 
 
-        //Read CSV data to Java objects
         CsvReader csvReader = new CsvReader();
         try {
             List<UserRow> users = csvReader.readCsv("data.csv");
-            users.forEach(System.out::println);
+
+
+            for (UserRow user : users) {
+                System.out.println(user);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
