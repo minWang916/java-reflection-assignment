@@ -10,9 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <name>Bill of Materials</name>
 
-    <modules>
-        <module>reflection-assignment</module>
-    </modules>
+
 
     <dependencyManagement>
         <dependencies>
